@@ -14,7 +14,7 @@ sns.set(style="whitegrid")
 st.set_page_config(page_title="Diabetes Prediction", layout="wide")
 
 # ---- TITLE ----
-st.title("🩺 Diabetes Prediction App")
+st.title(" Diabetes Prediction App")
 st.write("This Machine Learning project predicts whether a patient is likely to have diabetes based on their health parameters.")
 
 # ---- LOAD DATA ----
@@ -50,7 +50,7 @@ def train_model(data):
 model, scaler, accuracy, cm, feature_names = train_model(df)
 
 # ---- MODEL PERFORMANCE ----
-st.subheader("📊 Model Performance")
+st.subheader(" Model Performance")
 col1, col2 = st.columns(2)
 col1.metric("Model Accuracy", f"{accuracy*100:.2f}%")
 
@@ -66,7 +66,7 @@ col2.pyplot(fig_cm)
 st.markdown("---")
 
 # ---- DATA VISUALIZATION ----
-st.subheader("📈 Data Insights")
+st.subheader(" Data Insights")
 
 viz_col1, viz_col2 = st.columns(2)
 
@@ -87,7 +87,7 @@ with viz_col2:
 st.markdown("---")
 
 # ---- LIVE PREDICTION SECTION ----
-st.subheader("🔮 Try It Yourself: Predict Diabetes")
+st.subheader(" Try It Yourself: Predict Diabetes")
 st.write("Enter patient details below to get a live prediction from the trained model.")
 
 pred_col1, pred_col2, pred_col3, pred_col4 = st.columns(4)
@@ -115,14 +115,14 @@ if st.button("Predict"):
     probability = model.predict_proba(new_patient_scaled)[0][1]
 
     if prediction[0] == 1:
-        st.error(f"⚠️ This patient is LIKELY to have Diabetes (Probability: {probability*100:.1f}%)")
+        st.error(f" This patient is LIKELY to have Diabetes (Probability: {probability*100:.1f}%)")
     else:
-        st.success(f"✅ This patient is UNLIKELY to have Diabetes (Probability: {probability*100:.1f}%)")
+        st.success(f" This patient is UNLIKELY to have Diabetes (Probability: {probability*100:.1f}%)")
 
 st.markdown("---")
 
 # ---- CONCLUSION ----
-st.subheader("📌 Conclusion")
+st.subheader(" Conclusion")
 st.write("""
 - We trained a Logistic Regression model to predict whether a patient has diabetes based on health parameters such as Glucose level, BMI, Age, Blood Pressure, and Insulin.
 - Glucose and BMI were found to be the features most strongly correlated with diabetes.
